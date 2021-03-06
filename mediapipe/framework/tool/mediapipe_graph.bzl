@@ -59,6 +59,9 @@ def mediapipe_binary_graph(name, graph = None, output_name = None, deps = [], te
         ),
         tools = [name + "_text_to_binary_graph"],
         testonly = testonly,
+
+        # FIXME: pass as argument
+        visibility = ["//visibility:public"],
     )
 
 def data_as_c_string(

@@ -14,29 +14,19 @@ exports_files(["LICENSE"])
 cc_library(
     name = "opencv",
     srcs = glob(
-        [
-            "lib/x86_64-linux-gnu/libopencv_core.so",
-            "lib/x86_64-linux-gnu/libopencv_calib3d.so",
-            "lib/x86_64-linux-gnu/libopencv_features2d.so",
-            "lib/x86_64-linux-gnu/libopencv_highgui.so",
-            "lib/x86_64-linux-gnu/libopencv_imgcodecs.so",
-            "lib/x86_64-linux-gnu/libopencv_imgproc.so",
-            "lib/x86_64-linux-gnu/libopencv_video.so",
-            "lib/x86_64-linux-gnu/libopencv_videoio.so",
-        ],
-    ),
-    hdrs = glob([
-        # For OpenCV 3.x
-        "include/opencv2/**/*.h*",
-        # For OpenCV 4.x
-        # "include/opencv4/opencv2/**/*.h*",
-    ]),
-    includes = [
-        # For OpenCV 3.x
-        "include/",
-        # For OpenCV 4.x
-        # "include/opencv4/",
-    ],
+            [
+                "lib/libopencv_core.so.4.1",
+                "lib/libopencv_highgui.so.4.1",
+                "lib/libopencv_imgcodecs.so.4.1",
+                "lib/libopencv_imgproc.so.4.1",
+                "lib/libopencv_video.so.4.1",
+                "lib/libopencv_videoio.so.4.1",
+
+
+            ],
+        ),
+        hdrs = glob(["include/opencv4/**/*.h*"]),
+        includes = ["include/opencv4"],
     linkstatic = 1,
     visibility = ["//visibility:public"],
 )
